@@ -10,31 +10,31 @@
 
 ## Engine & Language
 
-- **Engine**: [TO BE CONFIGURED — run /setup-engine]
-- **Language**: [TO BE CONFIGURED]
-- **Rendering**: [TO BE CONFIGURED]
-- **Physics**: [TO BE CONFIGURED]
+- **Engine**: Unreal Engine 5.8
+- **Language**: Blueprint (primary), C++ where needed
+- **Rendering**: Lumen + Nanite (deferred)
+- **Physics**: Chaos
 
 ## Input & Platform
 
 <!-- Written by /setup-engine. Read by /ux-design, /ux-review, /test-setup, /team-ui, and /dev-story -->
 <!-- to scope interaction specs, test helpers, and implementation to the correct input methods. -->
 
-- **Target Platforms**: [TO BE CONFIGURED — e.g., PC, Console, Mobile, Web]
-- **Input Methods**: [TO BE CONFIGURED — e.g., Keyboard/Mouse, Gamepad, Touch, Mixed]
-- **Primary Input**: [TO BE CONFIGURED — the dominant input for this game]
-- **Gamepad Support**: [TO BE CONFIGURED — Full / Partial / None]
-- **Touch Support**: [TO BE CONFIGURED — Full / Partial / None]
-- **Platform Notes**: [TO BE CONFIGURED — any platform-specific UX constraints]
+- **Target Platforms**: Mobile (iOS/Android split not yet decided)
+- **Input Methods**: Touch
+- **Primary Input**: Touch
+- **Gamepad Support**: None
+- **Touch Support**: Full
+- **Platform Notes**: Genre not yet established (design brief pending). Revisit Primary Input once the brief exists.
 
 ## Naming Conventions
 
-- **Classes**: [TO BE CONFIGURED]
-- **Variables**: [TO BE CONFIGURED]
-- **Signals/Events**: [TO BE CONFIGURED]
-- **Files**: [TO BE CONFIGURED]
-- **Scenes/Prefabs**: [TO BE CONFIGURED]
-- **Constants**: [TO BE CONFIGURED]
+- **Classes**: PascalCase with Unreal prefix (`A` Actor, `U` UObject, `F` struct, `E` enum, `I` interface)
+- **Variables**: PascalCase (e.g., `MoveSpeed`); booleans with `b` prefix (e.g., `bIsAlive`)
+- **Signals/Events**: PascalCase `On<Event>` (delegates)
+- **Files**: PascalCase, matching the class name without prefix
+- **Scenes/Prefabs**: PascalCase (Levels/Maps)
+- **Constants**: SCREAMING_SNAKE — UNVERIFIED, not sourceable from docs/engine-reference/unreal/; confirm before relying on it
 
 ## Performance Budgets
 

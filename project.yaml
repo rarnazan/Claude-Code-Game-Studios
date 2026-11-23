@@ -25,3 +25,34 @@ framework:
 # here. `/project-settings --local <key>=<value>` writes there; `/project-settings <key>=<value>`
 # edits this file. See `.claude/docs/config-resolution.md` for the full
 # precedence order.
+
+engine:
+  name: "Unreal"
+  version: "5.8"
+  language: "Blueprint"
+  rendering: "Lumen + Nanite (deferred)"
+  physics: "Chaos"
+  path: "C:/Program Files/Epic Games/UE_5.8"
+
+specialists:
+  code: "unreal-specialist"
+  shader: "unreal-specialist"
+  ui: "ue-umg-specialist"
+  additional: ["ue-gas-specialist", "ue-blueprint-specialist", "ue-replication-specialist"]
+
+naming:
+  classes: PascalCase
+  variables: PascalCase
+  constants: SCREAMING_SNAKE   # UNVERIFIED — not sourceable from
+                               # docs/engine-reference/unreal/; confirm before relying on it
+  signals: PascalCase
+  files: PascalCase
+  scenes: PascalCase
+
+commands:
+  # TODO: replace <project> with the .uproject name once the project is scaffolded (/setup-engine 7.5)
+  # TODO: confirm these for your UE version and project — adjust via /project-settings
+  build: '"C:/Program Files/Epic Games/UE_5.8/Engine/Binaries/DotNET/AutomationTool/AutomationTool.exe" BuildCookRun -project="$(pwd -W 2>/dev/null || pwd)/<project>.uproject" -platform=Win64 -build -cook'
+  test: '"C:/Program Files/Epic Games/UE_5.8/Engine/Binaries/Win64/UnrealEditor-Cmd.exe" "$(pwd -W 2>/dev/null || pwd)/<project>.uproject" -ExecCmds="Automation RunTests <project>.; Quit" -unattended -nullrhi -stdout -FullStdOutLogOutput'
+  run: '"C:/Program Files/Epic Games/UE_5.8/Engine/Binaries/Win64/UnrealEditor.exe" "$(pwd -W 2>/dev/null || pwd)/<project>.uproject" -game -windowed -ResX=1280 -ResY=720'
+  smoke: '"C:/Program Files/Epic Games/UE_5.8/Engine/Binaries/Win64/UnrealEditor-Cmd.exe" "$(pwd -W 2>/dev/null || pwd)/<project>.uproject" -game -nullrhi -unattended -stdout -ExecCmds="Quit"'
