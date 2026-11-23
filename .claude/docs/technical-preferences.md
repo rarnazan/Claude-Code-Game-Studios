@@ -20,7 +20,7 @@
 <!-- Written by /setup-engine. Read by /ux-design, /ux-review, /test-setup, /team-ui, and /dev-story -->
 <!-- to scope interaction specs, test helpers, and implementation to the correct input methods. -->
 
-- **Target Platforms**: Mobile (iOS/Android split not yet decided)
+- **Target Platforms**: Android
 - **Input Methods**: Touch
 - **Primary Input**: Touch
 - **Gamepad Support**: None
