@@ -1,0 +1,13 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "5.8",
+	"Category": "",
+	"Description": "PROTOTYPE - NOT FOR PRODUCTION. Question: Does dual touch-stick control feel satisfying on a phone? (2026-11-23)",
+	"Modules": [
+		{
+			"Name": "ZombieTwinStick",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
